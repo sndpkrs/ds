@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiinkedList", "LiinkedList\LiinkedList.csproj", "{0219F2ED-2440-443B-A5AD-C6742AAF25E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "..\Stack\Stack\Stack.csproj", "{FDA4161D-72A2-43B2-AE80-63E7C8314486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue", "..\Queue\Queue\Queue.csproj", "{401AA2C2-DB6E-49E4-922F-C56C08319CBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0219F2ED-2440-443B-A5AD-C6742AAF25E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0219F2ED-2440-443B-A5AD-C6742AAF25E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0219F2ED-2440-443B-A5AD-C6742AAF25E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0219F2ED-2440-443B-A5AD-C6742AAF25E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDA4161D-72A2-43B2-AE80-63E7C8314486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA4161D-72A2-43B2-AE80-63E7C8314486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA4161D-72A2-43B2-AE80-63E7C8314486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA4161D-72A2-43B2-AE80-63E7C8314486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401AA2C2-DB6E-49E4-922F-C56C08319CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401AA2C2-DB6E-49E4-922F-C56C08319CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401AA2C2-DB6E-49E4-922F-C56C08319CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401AA2C2-DB6E-49E4-922F-C56C08319CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E09F3054-327F-4733-A999-722AF7BA259C}
+	EndGlobalSection
+EndGlobal
