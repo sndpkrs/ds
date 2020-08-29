@@ -7,29 +7,34 @@ namespace GraphNode
     public class GraphAdjacencyList
     {
         public int NoOfNodes;
-        public LinkedList<int>[] adjList;
+        public LinkedList<int>[] AdjList;
         public GraphAdjacencyList(int noOfNodes)
         {
             NoOfNodes = noOfNodes;
-            adjList = new LinkedList<int>[NoOfNodes];
+            AdjList = new LinkedList<int>[NoOfNodes];
             for (int i = 0; i < NoOfNodes; i++)
             {
-                adjList[i] = new LinkedList<int>();
+                AdjList[i] = new LinkedList<int>();
             }
         }
         //undirected
         public void AddEdgeUndirected(int fromNode, int toNode)
         {
-            adjList[fromNode].AddLast(toNode);
-            adjList[toNode].AddLast(fromNode);
+            AdjList[fromNode].AddLast(toNode);
+            AdjList[toNode].AddLast(fromNode);
+        }
+        //undirected
+        public void AddEdgeDirected(int fromNode, int toNode)
+        {
+            AdjList[fromNode].AddLast(toNode);
         }
         public void PrintGraph()
         {
-            for (int i = 0; i < adjList.Length; i++)
+            for (int i = 0; i < AdjList.Length; i++)
             {
-                if(adjList[i] != null)
+                if(AdjList[i] != null)
                 {
-                    foreach (var item in adjList[i])
+                    foreach (var item in AdjList[i])
                     {
                         Console.Write(item + "  ");
                     }
@@ -50,7 +55,7 @@ namespace GraphNode
             while (toBeTraversedNodeQueue.Count > 0)
             {
                 var currentNode = toBeTraversedNodeQueue.Dequeue();
-                var adjListForCurrentNode = adjList[currentNode];
+                var adjListForCurrentNode = AdjList[currentNode];
                 foreach (var item in adjListForCurrentNode)
                 {
                     if (!visited[item])
@@ -61,6 +66,51 @@ namespace GraphNode
                 }
                 Console.Write(currentNode + "   ");
             }
+        }
+        public void DFS(int sourceKey)
+        {
+            bool[] visited = new bool[NoOfNodes];
+            Console.WriteLine();
+            DFSRec(sourceKey, visited);
+        }
+        public void DFSRec(int node, bool[] visited)
+        {
+            visited[node] = true;
+            Console.Write(node + "  ");
+            foreach (var item in AdjList[node])
+            {
+                if(!visited[item])
+                DFSRec(item, visited);
+            }
+        }
+        public void TopologicalSort()
+        {
+            bool[] visited = new bool[NoOfNodes];
+            Stack<int> s = new Stack<int>();
+            for (int i = 0; i < NoOfNodes; i++)
+            {
+                if(visited[i] != true)
+                {
+                    TSRec(i, visited, s);
+                }
+            }
+            // Pop stack
+            while(s.Count > 0)
+            {
+                Console.WriteLine(s.Pop());
+            }
+        }
+        public void TSRec(int node, bool[] visited, Stack<int> s)
+        {
+            foreach (var item in AdjList[node])
+            {
+                if (!visited[item])
+                {
+                    TSRec(item, visited, s);
+                }
+            }
+            visited[node] = true;
+            s.Push(node);
         }
     }
 }
