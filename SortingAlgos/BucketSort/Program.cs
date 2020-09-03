@@ -14,16 +14,16 @@ namespace BucketSort
         }
         public static void BucketSort(int[] array)
         {
-            int noOfBuckets = (int)Math.Ceiling(Math.Sqrt(array.Length));
+            int noOfBuckets = (int)Math.Floor(Math.Sqrt(array.Length));
             int maxValue = array.Max();
-            var list = new List<List<int>>(noOfBuckets);
-            for (int l = 0; l < noOfBuckets; l++)
+            var list = new List<List<int>>(noOfBuckets+1);
+            for (int l = 0; l <= noOfBuckets; l++)
             {
                 list.Add(new List<int>());
             }
             for (int i = 0; i < array.Length; i++)
             {
-                int bucketNo = (int)Math.Floor((double)(array[i] * noOfBuckets)/maxValue);
+                int bucketNo = (int)Math.Floor((decimal)(array[i] * noOfBuckets)/maxValue);
                 list[bucketNo].Add(array[i]);
             }
             int finalArrayIndex = 0;
